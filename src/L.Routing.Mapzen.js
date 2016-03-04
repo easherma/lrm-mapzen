@@ -187,11 +187,22 @@
         locs.push(loc);
       }
 
-      var params = JSON.stringify({
-        locations: locs,
-        costing: this._transitmode,
-        costing_options: costingOptions
-      });
+      if(this._transitmode !== 'multimodal') {
+        var params = JSON.stringify({
+          locations: locs,
+          costing: this._transitmode,
+          costing_options: costingOptions
+        });
+      } else {
+        var params = JSON.stringify({
+          locations: locs,
+          costing: this._transitmode,
+          costing_options: costingOptions,
+          date_time: {
+            type:0
+          }
+        });
+      }
 
       return serviceUrl + '/route?json=' +
               params + '&api_key=' + this._accessToken;

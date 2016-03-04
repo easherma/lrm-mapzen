@@ -1,8 +1,8 @@
 var map = L.map('map');
 
-// Using Tangram 
+// Using Tangram
 var layer = Tangram.leafletLayer({
-  scene: 'scene.yaml',
+  scene: 'https://cdn.rawgit.com/tangrams/zinc-style/gh-pages/zinc-style.yaml',
   attribution: '<a href="https://mapzen.com/tangram" target="_blank">Tangram</a> | &copy; OSM contributors | <a href="https://mapzen.com/" target="_blank">Mapzen</a>'
 });
 layer.addTo(map);
@@ -15,11 +15,11 @@ layer.addTo(map);
 
 L.Routing.control({
   waypoints: [
-    L.latLng(36.4192141, -119.8706489),
-    L.latLng(36.4136136, -119.849234)
+    L.latLng(40.73229952965295, -73.99532318115234),
+    L.latLng(40.70237457404695, -73.94330978393555)
   ],
   // You can get your own Valhalla API key from the Mapzen developer portal (https://mapzen.com/developers/)
-  router: L.Routing.mapzen('<my-api-key>', 'auto'),
-  formatter: new L.Routing.Mapzen.Formatter({units:'imperial'}),
+  router: L.Routing.mapzen('valhalla-PVA4Y8g', 'multimodal'),
+  formatter: new L.Routing.Mapzen.Formatter(),
   summaryTemplate:'<div class="start">{name}</div><div class="info {transitmode}">{distance}, {time}</div>'
 }).addTo(map);
