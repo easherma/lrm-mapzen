@@ -5,7 +5,7 @@
 
   L.Routing = L.Routing || {};
 
-  //L.extend(L.Routing, require('./L.Routing.Localization'));  
+  //L.extend(L.Routing, require('./L.Routing.Localization'));
   L.Routing.Mapzen.Formatter = L.Class.extend({
     options: {
       units: 'metric',
@@ -32,7 +32,7 @@
           v,
         data;
       if (this.options.units === 'imperial') {
-        //valhalla returns distance in km 
+        //valhalla returns distance in km
         d  = d * 1000;
         d = d / 1.609344;
         if (d >= 1000) {
@@ -147,6 +147,7 @@
           return 'kFerryEnter';
         case 29:
           return 'kFerryExit';
+        //this needs to be updated for transit case.
       }
     },
 
