@@ -18,6 +18,13 @@ var control = L.Routing.control({
     L.latLng(37.752, -122.418),
     L.latLng(37.779, -122.391)
   ],
+  lineOptions: {
+    styles: [
+      {color: 'black', opacity: 0.15, weight: 9},
+      {color: 'white', opacity: 0.8, weight: 6},
+      {color: 'blue', opacity: 1.0, weight: 2}
+    ]
+  },
   geocoder: L.Control.Geocoder.mapzen('search-RH8pVLv'),
   reverseWaypoints: true,
   // You can get your own Valhalla API key from the Mapzen developer portal (https://mapzen.com/developers/)
